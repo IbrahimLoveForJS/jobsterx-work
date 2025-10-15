@@ -29,11 +29,11 @@ function DownloadCard({ title, fileUrl }) {
 
 export default function ResumeDownloads() {
   const items = [
-    { title: "IT Resume", fileUrl: "/public/Beam Resume Template.pdf" },
-    { title: "IT Resume", fileUrl: "/public/Professional Resume Template.pdf" },
-    { title: "IT Resume", fileUrl: "/public/Elegant Resume Template.pdf" },
-    { title: "IT Resume", fileUrl: "/public/Official Resume Template.pdf" },
-    { title: "IT Resume", fileUrl: "/public/Standout Resume Template.pdf" },
+    { title: "IT Resume", fileUrl: "/Beam Resume Template.pdf" },
+    { title: "IT Resume", fileUrl: "/Professional Resume Template.pdf" },
+    { title: "IT Resume", fileUrl: "/Elegant Resume Template.pdf" },
+    { title: "IT Resume", fileUrl: "/Official Resume Template.pdf" },
+    { title: "IT Resume", fileUrl: "/Standout Resume Template.pdf" },
   ]
 
   return (
