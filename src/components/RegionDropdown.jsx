@@ -42,7 +42,8 @@ export default function RegionDropdown({ value, onChange }) {
               alt={selectedCountry.name}
               className="w-5 h-3 object-cover"
             />
-            <span>{selectedCountry.name}</span>
+            {/* ✅ Added zinc color + small text */}
+            <span className="text-zinc-600 text-sm">{selectedCountry.name}</span>
           </div>
         ) : (
           <span className="text-gray-400">Select a Country</span>
@@ -77,7 +78,8 @@ export default function RegionDropdown({ value, onChange }) {
               className="flex items-center gap-2 px-3 py-1 hover:bg-gray-100 cursor-pointer"
             >
               <img src={c.flag} alt={c.name} className="w-5 h-3 object-cover" />
-              <span className="text-sm">{c.name}</span>
+              {/* ✅ Zinc + small size for dropdown list */}
+              <span className="text-zinc-600 text-xs">{c.name}</span>
             </div>
           ))}
         </div>

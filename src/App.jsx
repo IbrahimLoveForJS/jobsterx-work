@@ -9,7 +9,7 @@ export default function App() {
   const [country, setCountry] = useState("United States");
 
   return (
-    <div className="min-h-screen bg-[#fbfbfd] py-8 px-4 sm:px-6 lg:px-8 flex justify-center">
+    <div className="ml-56 mr-20 min-h-screen bg-[#fbfbfd] py-8 px-4 sm:px-6 lg:px-8 flex justify-center">
       <div className="w-full container-center mx-auto">
         <Header />
 
