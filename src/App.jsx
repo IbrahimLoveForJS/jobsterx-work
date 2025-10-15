@@ -9,8 +9,8 @@ export default function App() {
   const [country, setCountry] = useState("United States")
 
   return (
-    <div className="min-h-screen bg-[#fbfbfd] py-6 px-4 sm:px-6 lg:px-8 flex justify-center">
-      <div className="w-full max-w-5xl mx-auto space-y-6">
+    <div className="min-h-screen bg-[#fbfbfd] py-8 flex justify-center">
+      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6" style={{ paddingLeft: "6rem" }}>
         {/* Header */}
         <Header />
 
