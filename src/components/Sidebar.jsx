@@ -101,7 +101,7 @@ const Sidebar = ({ onClose, isMobile }) => {
 
       {/* ===== Footer ===== */}
       <div className="px-4 mt-8">
-        <button className="flex justify-between w-full bg-gradient-to-r from-blue-900 to-purple-700 text-white py-2 rounded-md text-sm hover:bg-purple-800 transition">
+        <button className="px-4 flex justify-between w-full bg-gradient-to-r from-blue-900 to-purple-700 text-white py-2 rounded-md text-sm hover:bg-purple-800 transition">
           🎖 Streak <span className="font-medium">7 days</span>
         </button>
       </div>
