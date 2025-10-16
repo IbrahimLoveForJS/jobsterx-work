@@ -35,7 +35,11 @@ export default function Header() {
 
       {/* ===== Modal Section ===== */}
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000] p-4">
+        <div
+  className="fixed left-0 top-0 w-screen h-screen min-h-[100dvh] 
+             flex items-center justify-center 
+             bg-black bg-opacity-50 z-[1000] px-4 sm:px-6"
+>
           <div className="bg-white rounded-xl p-4 sm:p-6 w-full max-w-md sm:max-w-2xl md:max-w-3xl max-h-[90vh] overflow-y-auto shadow-xl">
             {/* ===== Header Row ===== */}
             <div className="flex justify-between items-start">
