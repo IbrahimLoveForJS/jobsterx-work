@@ -2,6 +2,15 @@ import { useState } from "react";
 
 export default function Header() {
   const [showModal, setShowModal] = useState(false);
+  const [showContent, setShowContent] = useState(false)
+  const [value, setValue] = useState('')
+
+  function handleContent() {
+    if(value !== '') {
+      setShowContent(true)
+      setValue('')
+    }
+  }
 
   return (
     <>
@@ -27,14 +36,16 @@ export default function Header() {
 
       {showModal && (
         <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
-          <div className="bg-white rounded-xl p-6 min-w-[620px] max-h-[90vh] overflow-y-auto">
+          <div className="bg-white rounded-xl p-6 min-w-[620px] max-h-[90vh] overflow-y-auto shadow-xl">
             <div className="flex justify-between items-start">
               <h3 className="font-bold mb-2 text-2xl">
                 Resume JD Score Analysis
               </h3>
               <button
                 className="text-gray-600 text-lg hover:text-gray-800"
-                onClick={() => setShowModal(false)}
+                onClick={() => {setShowModal(false)
+                  setShowContent(false)
+                }}
               >
                 ×
               </button>
@@ -56,11 +67,13 @@ export default function Header() {
               className="w-full border border-gray-300 rounded-xl p-2 mb-4"
               rows={5}
               placeholder="Paste your current resume text here for AI Analysis..."
+              onChange={(e) => setValue(e.target.value)}
+              value={value}
             />
 
             <button
-              onClick={() => setShowModal(false)}
-              className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg w-full"
+              onClick={handleContent}
+              className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg w-full shadow-md transition-all duration-200"
             >
               Analyze with AI
             </button>
@@ -68,21 +81,21 @@ export default function Header() {
             {/* ========================= */}
             {/* ATS Results Section Below */}
             {/* ========================= */}
-            <div className="mt-8 space-y-6">
+            {showContent && <div className="mt-8 space-y-6">
               {/* Top Score Section */}
-              <div className="grid grid-cols-2 gap-4 text-center bg-[#f9f7ff] p-4 rounded-lg">
-                <div>
+              <div className="grid grid-cols-2 gap-6 bg-[#f9f7ff] p-6 rounded-xl shadow-md">
+                <div className="bg-white rounded-lg p-4 shadow-sm">
                   <p className="text-sm text-gray-500">ATS Compatibility Score</p>
                   <p className="text-2xl font-bold text-purple-700">70/100</p>
                 </div>
-                <div>
+                <div className="bg-white rounded-lg p-4 shadow-sm">
                   <p className="text-sm text-gray-500">Improvement Areas</p>
                   <p className="text-2xl font-bold text-purple-700">4</p>
                 </div>
               </div>
 
               {/* Strength Areas */}
-              <div className="bg-white border border-gray-200 rounded-xl p-4">
+              <div className="bg-white rounded-xl p-5 shadow-md">
                 <h3 className="font-semibold text-purple-700 mb-2">✓ Strength Areas</h3>
                 <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
                   <li>Strong professional experience section</li>
@@ -92,8 +105,10 @@ export default function Header() {
               </div>
 
               {/* Improvement Suggestions */}
-              <div className="bg-white border border-gray-200 rounded-xl p-4">
-                <h3 className="font-semibold text-purple-700 mb-2">⚙️ Improvement Suggestions</h3>
+              <div className="bg-white rounded-xl p-5 shadow-md">
+                <h3 className="font-semibold text-purple-700 mb-2">
+                  ⚙️ Improvement Suggestions
+                </h3>
                 <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
                   <li>Add quantifiable achievements with specific metrics</li>
                   <li>Include more industry-specific keywords from job descriptions</li>
@@ -103,22 +118,28 @@ export default function Header() {
               </div>
 
               {/* Recommended Keywords */}
-              <div className="bg-white border border-gray-200 rounded-xl p-4">
-                <h3 className="font-semibold text-purple-700 mb-3">🔑 Recommended Keywords</h3>
+              <div className="bg-white rounded-xl p-5 shadow-md">
+                <h3 className="font-semibold text-purple-700 mb-3">
+                  🔑 Recommended Keywords
+                </h3>
                 <div className="flex flex-wrap gap-2">
-                  {["Project Management", "Team Leadership", "Communication", "Problem Solving", "Strategic Planning"].map(
-                    (keyword, i) => (
-                      <span
-                        key={i}
-                        className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium"
-                      >
-                        {keyword}
-                      </span>
-                    )
-                  )}
+                  {[
+                    "Project Management",
+                    "Team Leadership",
+                    "Communication",
+                    "Problem Solving",
+                    "Strategic Planning",
+                  ].map((keyword, i) => (
+                    <span
+                      key={i}
+                      className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium"
+                    >
+                      {keyword}
+                    </span>
+                  ))}
                 </div>
               </div>
-            </div>
+            </div>}
           </div>
         </div>
       )}
