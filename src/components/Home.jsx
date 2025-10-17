@@ -18,18 +18,18 @@ function Home() {
   return (
     <div className="py-8 px-6 sm:px-8 lg:px-20">
       <div className="w-full max-w-5xl mx-auto">
-        {/* <Header />
+        <Header />
         <ResumeProgress />
         <ResumeFormat country={country} setCountry={setCountry} />
         <ResumeDownloads />
-        <ATSTips /> */}
-        <LoaderDots />
+        <ATSTips />
+        {/* <LoaderDots />
         <br />
         <LoaderRing />
         <br />
         <LoaderBar />
         <br />
-        <LoaderSkeleton />
+        <LoaderSkeleton /> */}
       </div>
     </div>
   );

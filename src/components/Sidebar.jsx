@@ -12,7 +12,7 @@ const Sidebar = ({ onClose, isMobile }) => {
     { label: "Lorem Ipsum" },
     { label: "Build your Resume", path: "/build" },
     { label: "Home", path: "/" },
-    { label: "Lorem Ipsum" },
+    { label: "Loaders", path: '/loaders' },
     { label: "Lorem Ipsum" },
     { label: "Lorem Ipsum" },
     { label: "Lorem Ipsum" },
