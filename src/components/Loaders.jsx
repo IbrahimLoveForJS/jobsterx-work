@@ -6,7 +6,7 @@ import LoaderSkeleton from "../loaders/LoaderSkeleton";
 function Loaders() {
   return (
     <div>
-      <div className="w-full max-w-5xl mx-auto">
+      <div className="w-full max-w-5xl mx-auto mt-4">
         <LoaderDots />
         <br />
         <LoaderRing />
