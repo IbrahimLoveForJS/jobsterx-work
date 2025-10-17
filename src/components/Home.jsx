@@ -23,13 +23,6 @@ function Home() {
         <ResumeFormat country={country} setCountry={setCountry} />
         <ResumeDownloads />
         <ATSTips />
-        {/* <LoaderDots />
-        <br />
-        <LoaderRing />
-        <br />
-        <LoaderBar />
-        <br />
-        <LoaderSkeleton /> */}
       </div>
     </div>
   );

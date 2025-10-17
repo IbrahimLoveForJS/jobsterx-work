@@ -1,15 +1,19 @@
-import { useState } from "react"
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 export default function Header() {
-  const [showModal, setShowModal] = useState(false)
-  const [showContent, setShowContent] = useState(false)
-  const [value, setValue] = useState("")
+  const [showModal, setShowModal] = useState(false);
+  const [showContent, setShowContent] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
-  function handleContent() {
-    if (value.trim() !== "") {
-      setShowContent(true)
-      setValue("")
-    }
+  function onSubmit(data) {
+    setShowContent(true)
+    reset() // clears the textarea
   }
 
   return (
@@ -36,10 +40,10 @@ export default function Header() {
       {/* ===== Modal Section ===== */}
       {showModal && (
         <div
-  className="fixed left-0 top-0 w-screen h-screen min-h-[100dvh] 
+          className="fixed left-0 top-0 w-screen h-screen min-h-[100dvh] 
              flex items-center justify-center 
              bg-black bg-opacity-50 z-[1000] px-4 sm:px-6"
->
+        >
           <div className="bg-white rounded-xl p-4 sm:p-6 w-full max-w-md sm:max-w-2xl md:max-w-3xl max-h-[90vh] overflow-y-auto shadow-xl">
             {/* ===== Header Row ===== */}
             <div className="flex justify-between items-start">
@@ -49,8 +53,8 @@ export default function Header() {
               <button
                 className="text-gray-600 text-lg hover:text-gray-800"
                 onClick={() => {
-                  setShowModal(false)
-                  setShowContent(false)
+                  setShowModal(false);
+                  setShowContent(false);
                 }}
               >
                 ×
@@ -70,20 +74,25 @@ export default function Header() {
             <h1 className="text-base sm:text-lg font-bold mb-2">
               Paste Your Resume Content
             </h1>
-            <textarea
-              className="w-full border border-gray-300 rounded-xl p-2 mb-4 text-sm sm:text-base resize-none"
-              rows={5}
-              placeholder="Paste your current resume text here for AI Analysis..."
-              onChange={(e) => setValue(e.target.value)}
-              value={value}
-            />
+            <form onSubmit={handleSubmit(onSubmit)}>
+              {errors.resumeContent && (
+                <p className="text-red-500 text-sm mb-2">
+                  {errors.resumeContent.message}
+                </p>
+              )}
+              <textarea
+                {...register("resumeContent", {
+                  required: "Resume content cannot be empty",
+                })}
+                className="w-full border border-gray-300 rounded-xl p-2 mb-4 text-sm sm:text-base resize-none"
+                rows={5}
+                placeholder="Paste your current resume text here for AI Analysis..."
+              />
 
-            <button
-              onClick={handleContent}
-              className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg w-full text-sm sm:text-base font-medium shadow-md transition-all duration-200"
-            >
-              Analyze with AI
-            </button>
+              <button className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg w-full text-sm sm:text-base font-medium shadow-md transition-all duration-200">
+                Analyze with AI
+              </button>
+            </form>
 
             {/* ===== Results Section ===== */}
             {showContent && (
@@ -130,9 +139,7 @@ export default function Header() {
                       descriptions
                     </li>
                     <li>Use action verbs at the beginning of bullet points</li>
-                    <li>
-                      Add relevant certifications or training programs
-                    </li>
+                    <li>Add relevant certifications or training programs</li>
                   </ul>
                 </div>
 
@@ -164,5 +171,5 @@ export default function Header() {
         </div>
       )}
     </>
-  )
+  );
 }

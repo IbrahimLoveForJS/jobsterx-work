@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function ResumePreview() {
   return (
     <div className="p-6 sm:p-10 bg-gray-50 min-h-screen flex flex-col items-center">
