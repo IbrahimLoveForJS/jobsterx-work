@@ -1,4 +1,5 @@
-import DashboardCards from "../components/DashBoardCards";
+import DashboardCards from "../components/DashboardCards";
+
 
 function Dashboard() {
   return <div>
