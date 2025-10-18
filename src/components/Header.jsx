@@ -12,8 +12,8 @@ export default function Header() {
   } = useForm();
 
   function onSubmit(data) {
-    setShowContent(true)
-    reset() // clears the textarea
+    setShowContent(true);
+    reset(); // clears the textarea
   }
 
   return (
@@ -21,19 +21,19 @@ export default function Header() {
       {/* ===== Header Section ===== */}
       <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
         <div className="flex flex-col text-center sm:text-left">
-          <h1 className="text-lg sm:text-xl font-semibold text-gray-800">
+          <h1 className="text-lg sm:text-xl font-bold font-montserrat text-gray-800">
             Resume Builder
           </h1>
-          <p className="text-xs sm:text-sm text-gray-500">
+          <p className="text-xs sm:text-sm font-montserrat text-[#5B5B5B]">
             Create ATS-optimized resumes that get you noticed
           </p>
         </div>
 
         <button
           onClick={() => setShowModal(true)}
-          className="bg-purple-700 hover:bg-purple-800 text-white px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-semibold transition-colors duration-200 w-full sm:w-auto"
+          className="bg-gradient-to-r from-[#3A0CA3] to-[#7209B7] hover:opacity-90 py-3 text-white px-4 sm:px-6 rounded-xl text-xs sm:text-sm font-semibold transition duration-200 w-full sm:w-auto font-montserrat"
         >
-          Get Your Resume 2.0 Score
+          Get Your Resume JD Score
         </button>
       </header>
 
@@ -55,6 +55,7 @@ export default function Header() {
                 onClick={() => {
                   setShowModal(false);
                   setShowContent(false);
+                  reset();
                 }}
               >
                 ×

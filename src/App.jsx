@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout";
-import Home from "./components/Home";
-import ResumePreview from "./components/ResumePreview";
+import Home from "./pages/Home";
+import ResumePreview from "./pages/ResumePreview";
 import ScrollToTop from "./components/ScrollToTop";
 import Loaders from "./components/Loaders";
+import Dashboard from "./pages/Dashboard";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -22,6 +23,10 @@ export default function App() {
         {
           path: '/loaders',
           element: <Loaders />
+        },
+        {
+          path: '/dashboard',
+          element: <Dashboard />
         }
       ],
     },

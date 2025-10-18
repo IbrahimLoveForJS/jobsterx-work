@@ -12,14 +12,14 @@ function DownloadCard({ title, fileUrl }) {
   }
 
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="flex flex-col items-center gap-1">
       <div className="mt-2 w-24 h-24 rounded-lg border-dashed border-purple-200 flex items-center justify-center">
         <TbFileDescription size={72} className="text-purple-900" />
       </div>
-      <div className="text-xs font-semibold text-gray-600">{title}</div>
+      <div className="text-sm font-semibold text-[#5B5B5B] font-montserrat">{title}</div>
       <button
         onClick={handleDownload}
-        className="text-[11px] text-pink-500 font-bold tracking-wide hover:underline"
+        className="text-[11px] font-montserrat text-[#F72585] font-bold tracking-wide hover:underline mb-14"
       >
         DOWNLOAD
       </button>
@@ -38,11 +38,11 @@ export default function ResumeDownloads() {
 
   return (
     <section className="bg-white rounded-lg shadow-card p-6 mb-6">
-      <h2 className="text-3xl font-bold text-purple-800">
+      <h2 className="text-xl font-bold text-[#3A0CA3] font-montserrat">
         Resume Download History
       </h2>
-      <div className="mt-2">
-        <p className="text-xs text-zinc-500">
+      <div className="mt-2 mb-12">
+        <p className="text-xs text-[#5B5B5B] font-montserrat font-normal">
           Track all your resume downloads with timestamps and formats
         </p>
       </div>

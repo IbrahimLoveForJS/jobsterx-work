@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom"
+
 export default function ResumePreview() {
+  const navigate = useNavigate()
   return (
     <div className="p-6 sm:p-10 bg-gray-50 min-h-screen flex flex-col items-center">
       {/* ==== BUTTON BAR ==== */}
@@ -11,7 +14,7 @@ export default function ResumePreview() {
           <button className="bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors duration-200">
             Edit Details
           </button>
-          <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-semibold px-4 py-2 rounded-full transition-colors duration-200">
+          <button onClick={() => navigate('/')} className="bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-semibold px-4 py-2 rounded-full transition-colors duration-200">
             Close Preview
           </button>
         </div>

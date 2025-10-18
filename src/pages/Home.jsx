@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Header from "./Header";
-import ResumeProgress from "./ResumeProgress";
-import ResumeFormat from "./ResumeFormat";
-import ResumeDownloads from "./ResumeDownloads";
-import ATSTips from "./ATSTips";
+import Header from "../components/Header";
+import ResumeProgress from "../components/ResumeProgress";
+import ResumeFormat from "../components/ResumeFormat";
+import ResumeDownloads from "../components/ResumeDownloads";
+import ATSTips from "../components/ATSTips";
 import LoaderDots from "../loaders/LoaderDots";
 import LoaderRing from "../loaders/LoaderRing";
 import LoaderBar from "../loaders/LoaderBar";
