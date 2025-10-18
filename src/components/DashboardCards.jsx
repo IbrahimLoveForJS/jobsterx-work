@@ -3,7 +3,7 @@ import { CiLinkedin } from "react-icons/ci";
 
 export default function DashboardCards() {
   return (
-    <div className="font-montserrat min-h-screen bg-gray-50 px-6 py-10">
+    <div className="font-montserrat min-h-screen bg-gray-50 px-6 pb-0 pt-6">
       <div className="w-full max-w-[1800px] mx-auto">
         {/* ===== HEADER ===== */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
@@ -35,40 +35,30 @@ export default function DashboardCards() {
         </h2>
 
         {/* ===== CARDS GRID ===== */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* ===== CARD 1: Total Experience ===== */}
           <div className="bg-[#3D0CA8] text-white p-6 rounded-2xl shadow-lg">
             <div className="flex justify-between items-center mb-6 flex-wrap lg:flex-nowrap">
               <div className="flex items-center gap-2 min-w-0">
                 <span className="text-xl flex-shrink-0">🕓</span>
-                <p className="font-semibold text-sm truncate">
+                <p className="font-semibold text-sm md:text-base truncate">
                   Total Experience
                 </p>
               </div>
-              <button className="text-xs bg-white text-black font-bold rounded-md whitespace-nowrap px-2 py-1 flex items-center gap-1">
+              <button className="text-xs md:text-sm bg-white text-black font-bold rounded-md whitespace-nowrap px-2 py-1 flex items-center gap-1">
                 <CiLinkedin /> Share
               </button>
             </div>
 
             <div className="flex items-baseline justify-center gap-6 mb-4 mt-12">
               <div className="text-center">
-                <h3 className="text-5xl lg:text-6xl font-extrabold leading-none">
-                  5
-                </h3>
-                <span className="text-sm md:text-base mt-1 inline-block">
-                  Years
-                </span>
+                <h3 className="text-5xl lg:text-6xl font-extrabold leading-none">5</h3>
+                <span className="text-sm md:text-base mt-1 inline-block">Years</span>
               </div>
-              <div className="text-3xl lg:text-4xl font-bold text-white/70 self-center">
-                •
-              </div>
+              <div className="text-3xl lg:text-4xl font-bold text-white/70 self-center">•</div>
               <div className="text-center">
-                <h3 className="text-5xl lg:text-6xl font-extrabold leading-none">
-                  8
-                </h3>
-                <span className="text-sm md:text-base mt-1 inline-block">
-                  Months
-                </span>
+                <h3 className="text-5xl lg:text-6xl font-extrabold leading-none">8</h3>
+                <span className="text-sm md:text-base mt-1 inline-block">Months</span>
               </div>
             </div>
 
@@ -79,32 +69,24 @@ export default function DashboardCards() {
 
           {/* ===== CARD 2: JobsterX Level ===== */}
           <div className="bg-[#3D0CA8] text-white p-6 rounded-2xl shadow-lg">
-            <div className="flex justify-between items-center mb-6">
-              <div className="flex items-center gap-2">
-                <span className="text-lg">⚡</span>
-                <p className="font-semibold text-sm md:text-base">
-                  JobsterX Level
-                </p>
+            <div className="flex justify-between items-center mb-6 flex-wrap lg:flex-nowrap">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="text-lg flex-shrink-0">⚡</span>
+                <p className="font-semibold text-sm md:text-base truncate">JobsterX Level</p>
               </div>
-              <button className="text-xs md:text-sm bg-white text-black font-bold px-2 py-1 rounded-md whitespace-nowrap flex items-center gap-1">
+              <button className="text-xs md:text-sm bg-white text-black font-bold rounded-md whitespace-nowrap px-2 py-1 flex items-center gap-1">
                 <CiLinkedin /> Share
               </button>
             </div>
 
             <div className="flex flex-col items-center">
-              <span className="bg-[#5D4CFF] text-white text-xs md:text-sm font-semibold px-3 py-1 rounded-full mb-3">
-                Xecutor
-              </span>
+              <span className="bg-[#5D4CFF] text-white text-xs md:text-sm font-semibold px-3 py-1 rounded-full mb-3">Xecutor</span>
               <p className="text-4xl md:text-5xl font-bold mb-1">8%</p>
-              <p className="text-sm md:text-base text-white/80 mb-3">
-                Progress
-              </p>
+              <p className="text-sm md:text-base text-white/80 mb-3">Progress</p>
               <div className="w-full bg-white/60 h-2 md:h-3 rounded-full mb-3">
                 <div className="w-[8%] h-full bg-[#4361EE] rounded-full" />
               </div>
-              <p className="text-sm md:text-base text-white/80">
-                Next: Xpecialist
-              </p>
+              <p className="text-sm md:text-base text-white/80">Next: Xpecialist</p>
             </div>
           </div>
 
@@ -116,13 +98,10 @@ export default function DashboardCards() {
             </div>
             <div className="text-center">
               <h3 className="text-5xl lg:text-6xl font-bold">3</h3>
-              <p className="text-sm md:text-base text-white/80 mb-4">
-                Organizations
-              </p>
+              <p className="text-sm md:text-base text-white/80 mb-4">Organizations</p>
               <div className="border-t border-white/20 pt-3">
                 <p className="text-sm md:text-base">
-                  <span className="font-semibold text-lg md:text-xl">2.0</span>{" "}
-                  avg. tenure (years)
+                  <span className="font-semibold text-lg md:text-xl">2.0</span> avg. tenure (years)
                 </p>
               </div>
             </div>
