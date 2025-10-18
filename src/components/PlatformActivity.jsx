@@ -61,7 +61,8 @@ const activityData = [
     title: "Resumes Built",
     description: "Professional profiles created",
     count: 3,
-    bgColor: "bg-indigo-100",
+    bgColor: "bg-[#3A0CA333]/20",
+    textColor: "text-[#3A0CA3]",
     iconColor: "text-indigo-600",
   },
   {
@@ -69,23 +70,17 @@ const activityData = [
     title: "Mock Interviews",
     description: "Practice sessions completed",
     count: 7,
-    bgColor: "bg-purple-100",
+    bgColor: "bg-[#7209B733]",
+    textColor: "text-[#7209B7]",
     iconColor: "text-purple-600",
-  },
-  {
-    icon: BookOpen,
-    title: "Training Sessions",
-    description: "Skills development programs",
-    count: 5,
-    bgColor: "bg-indigo-100",
-    iconColor: "text-indigo-600",
   },
   {
     icon: Activity,
     title: "Career Sessions",
     description: "Counselling appointments",
     count: 2,
-    bgColor: "bg-purple-100",
+    bgColor: "bg-[#3A0CA333]/20",
+    textColor: "text-[#3A0CA3]",
     iconColor: "text-purple-600",
   },
   {
@@ -93,7 +88,17 @@ const activityData = [
     title: "Employer Ratings",
     description: "Company reviews submitted",
     count: 12,
-    bgColor: "bg-indigo-100",
+    bgColor: "bg-[#7209B733]",
+    textColor: "text-[#7209B7]",
+    iconColor: "text-indigo-600",
+  },
+  {
+    icon: BookOpen,
+    title: "Training Sessions",
+    description: "Skills development programs",
+    count: 5,
+    bgColor: "bg-blue-200",
+    textColor: 'text-[#4361EE]',
     iconColor: "text-indigo-600",
   },
   {
@@ -101,7 +106,8 @@ const activityData = [
     title: "Events Attended",
     description: "Networking & conferences",
     count: 4,
-    bgColor: "bg-purple-100",
+    bgColor: "bg-blue-200",
+    textColor: 'text-[#4361EE]',
     iconColor: "text-purple-600",
   },
 ];
@@ -163,8 +169,8 @@ const PlatformActivity = () => {
                 <div className="flex items-center">
                   <item.icon className={`w-5 h-5 mr-3 ${item.iconColor}`} />
                   <div>
-                    <p className="font-semibold text-gray-800">{item.title}</p>
-                    <p className="text-xs text-gray-600">{item.description}</p>
+                    <p className={`font-semibold ${item.textColor} font-montserrat`}>{item.title}</p>
+                    <p className={`text-xs text ${item.textColor}`}>{item.description}</p>
                   </div>
                 </div>
                 {/* Ensure badge has white text for contrast */}
@@ -228,13 +234,15 @@ const PlatformActivity = () => {
                     {notification.time}
                   </span>
                 </div>
-                <p className="text-sm text-[#5B5B5B] font-montserrat">{notification.details}</p>
+                <p className="text-sm text-[#5B5B5B] font-montserrat">
+                  {notification.details}
+                </p>
               </div>
             ))}
           </div>
 
           {/* View All Notifications Button */}
-          <button className="mt-6 w-full py-3 text-sm font-bold text-indigo-600 border border-indigo-200 rounded-lg hover:bg-indigo-50 transition">
+          <button className="mt-6 w-full py-3 text-sm font-bold text-black border border-red-200 rounded-lg hover:bg-indigo-50 transition">
             View All Notifications
           </button>
         </div>
