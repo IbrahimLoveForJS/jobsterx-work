@@ -1,7 +1,10 @@
 import React from "react";
 import { CiLinkedin } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
 
 export default function DashboardCards() {
+    const navigate = useNavigate();
+
   return (
     <div className="font-montserrat min-h-screen bg-gray-50 px-6 pb-0 pt-6">
       <div className="w-full max-w-[1800px] mx-auto">
@@ -20,7 +23,7 @@ export default function DashboardCards() {
             <button className="flex items-center gap-2 bg-gray-800 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md hover:bg-gray-900 transition">
               QR CODE
             </button>
-            <button className="flex items-center gap-2 bg-white border border-gray-200 text-gray-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm hover:bg-gray-50 transition">
+            <button onClick={() => navigate('/update-profile')} className="flex items-center gap-2 bg-white border border-gray-200 text-gray-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm hover:bg-gray-50 transition">
               Update Profile
             </button>
             <button className="flex items-center gap-2 bg-pink-500 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md hover:bg-pink-600 transition">

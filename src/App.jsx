@@ -5,6 +5,7 @@ import ResumePreview from "./pages/ResumePreview";
 import ScrollToTop from "./components/ScrollToTop";
 import Loaders from "./components/Loaders";
 import Dashboard from "./pages/Dashboard";
+import UpdateProfile from "./pages/UpdateProfile";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -27,6 +28,10 @@ export default function App() {
         {
           path: '/dashboard',
           element: <Dashboard />
+        },
+        {
+          path: '/update-profile',
+          element: <UpdateProfile />
         }
       ],
     },
