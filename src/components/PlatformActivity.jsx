@@ -138,16 +138,13 @@ const notificationData = [
 // --- New Platform Activity Component ---
 const PlatformActivity = () => {
   return (
-    <div className=" mx-auto max-w-[1200px] h-full">
+    <div className="w-full"> {/* full width so it lines up with DashboardCards & JobApplication */}
       {/* Main Section Header */}
-      <h2 className="ml-2 text-3xl font-bold text-gray-800 mb-6">
-        Platform Activity
-      </h2>
+      <h2 className="text-2xl font-bold text-gray-800 mb-6">Platform Activity</h2>
 
-      {/* Platform Activity Cards and Notifications Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Platform Activity Summary (2/3 width) */}
-        <div className="lg:col-span-2 p-6 rounded-xl shadow-xl bg-white">
+      {/* grid layout kept as before, content unchanged */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-2 p-6 rounded-xl shadow-md bg-white">
           <div className="flex justify-between items-center mb-6">
             <h3 className="text-xl font-bold text-gray-800">
               Platform Activity Summary
@@ -202,9 +199,7 @@ const PlatformActivity = () => {
             </div>
           </div>
         </div>
-
-        {/* Recent Notifications (1/3 width) */}
-        <div className="lg:col-span-1 p-6 rounded-xl shadow-xl bg-white flex flex-col">
+        <div className="lg:col-span-1 p-6 rounded-xl shadow-md bg-white flex flex-col">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-xl font-bold text-gray-800 flex items-center">
               <Bell className="w-5 h-5 mr-2 text-red-500" />
@@ -218,7 +213,6 @@ const PlatformActivity = () => {
             Stay updated with your activities
           </p>
 
-          {/* Notification List */}
           {/* Notification List */}
           <div className="shadow-md space-y-4 flex-grow">
             {notificationData.map((notification, index) => (
