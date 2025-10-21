@@ -63,16 +63,7 @@ const activityData = [
     count: 3,
     bgColor: "bg-[#3A0CA333]/20",
     textColor: "text-[#3A0CA3]",
-    iconColor: "text-indigo-600",
-  },
-  {
-    icon: Users,
-    title: "Mock Interviews",
-    description: "Practice sessions completed",
-    count: 7,
-    bgColor: "bg-[#7209B733]",
-    textColor: "text-[#7209B7]",
-    iconColor: "text-purple-600",
+    badgeBg: "bg-[#3A0CA3]",
   },
   {
     icon: Activity,
@@ -81,7 +72,16 @@ const activityData = [
     count: 2,
     bgColor: "bg-[#3A0CA333]/20",
     textColor: "text-[#3A0CA3]",
-    iconColor: "text-purple-600",
+    badgeBg: "bg-[#3A0CA3]",
+  },
+  {
+    icon: Users,
+    title: "Mock Interviews",
+    description: "Practice sessions completed",
+    count: 7,
+    bgColor: "bg-[#7209B733]",
+    textColor: "text-[#7209B7]",
+    badgeBg: "bg-[#7209B7]",
   },
   {
     icon: Star,
@@ -90,25 +90,25 @@ const activityData = [
     count: 12,
     bgColor: "bg-[#7209B733]",
     textColor: "text-[#7209B7]",
-    iconColor: "text-indigo-600",
+    badgeBg: "bg-[#7209B7]",
   },
   {
     icon: BookOpen,
     title: "Training Sessions",
     description: "Skills development programs",
     count: 5,
-    bgColor: "bg-blue-200",
-    textColor: 'text-[#4361EE]',
-    iconColor: "text-indigo-600",
+    bgColor: "bg-[#4361EE33]",
+    textColor: "text-[#4361EE]",
+    badgeBg: "bg-[#4361EE]",
   },
   {
     icon: Calendar,
     title: "Events Attended",
     description: "Networking & conferences",
     count: 4,
-    bgColor: "bg-blue-200",
-    textColor: 'text-[#4361EE]',
-    iconColor: "text-purple-600",
+    bgColor: "bg-[#4361EE33]",
+    textColor: "text-[#4361EE]",
+    badgeBg: "bg-[#4361EE]",
   },
 ];
 
@@ -138,18 +138,21 @@ const notificationData = [
 // --- New Platform Activity Component ---
 const PlatformActivity = () => {
   return (
-    <div className="w-full"> {/* full width so it lines up with DashboardCards & JobApplication */}
+    <div className="w-full">
+      {" "}
+      {/* full width so it lines up with DashboardCards & JobApplication */}
       {/* Main Section Header */}
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">Platform Activity</h2>
-
+      <h2 className="text-2xl font-montserrat font-bold text-gray-800 mb-6">
+        Platform Activity
+      </h2>
       {/* grid layout kept as before, content unchanged */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 p-6 rounded-xl shadow-md bg-white">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-xl font-bold text-gray-800">
+            <h3 className="font-montserrat text-xl font-bold text-gray-800">
               Platform Activity Summary
             </h3>
-            <select className="px-3 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 focus:ring-indigo-500 focus:border-indigo-500 transition">
+            <select className="px-3 py-2 font-montserrat border border-gray-300 rounded-lg text-sm font-medium text-gray-700 focus:ring-indigo-500 focus:border-indigo-500 transition">
               <option>This Month</option>
               <option>Last Month</option>
               <option>All Time</option>
@@ -164,18 +167,21 @@ const PlatformActivity = () => {
                 className={`p-4 rounded-xl shadow-md flex items-center justify-between ${item.bgColor}`}
               >
                 <div className="flex items-center">
-                  <item.icon className={`w-5 h-5 mr-3 ${item.iconColor}`} />
+                  <item.icon className={`w-5 h-5 mr-3 ${item.textColor}`} />
                   <div>
-                    <p className={`font-semibold ${item.textColor} font-montserrat`}>{item.title}</p>
-                    <p className={`text-xs text ${item.textColor}`}>{item.description}</p>
+                    <p
+                      className={`font-semibold ${item.textColor} font-montserrat`}
+                    >
+                      {item.title}
+                    </p>
+                    <p className={`text-xs text ${item.textColor}`}>
+                      {item.description}
+                    </p>
                   </div>
                 </div>
                 {/* Ensure badge has white text for contrast */}
                 <span
-                  className={`text-xs font-bold px-2 py-0.5 rounded-full text-white ${item.iconColor.replace(
-                    "text-",
-                    "bg-"
-                  )}`}
+                  className={`text-xs font-bold px-2 py-0.5 rounded-full text-white ${item.badgeBg}`}
                 >
                   {item.count}
                 </span>
@@ -186,7 +192,7 @@ const PlatformActivity = () => {
           {/* Total Platform Activity Bar */}
           <div className="bg-gradient-to-r from-indigo-800 to-purple-800 p-5 rounded-xl text-white shadow-lg flex justify-between items-center">
             <div>
-              <p className="text-lg font-bold">Total Platform Activity</p>
+              <p className="text-lg font-bold font-montserrat">Total Platform Activity</p>
               <p className="text-sm text-indigo-200">
                 Your engagement across all features
               </p>

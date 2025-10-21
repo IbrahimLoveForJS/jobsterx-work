@@ -93,7 +93,7 @@ const Chart = () => {
   );
 
   return (
-    <div className="max-w-6xl mx-auto mt-10">
+    <div className="w-full">
       <h2 className="text-3xl font-bold text-gray-800 mb-6">Career Journey</h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -101,14 +101,14 @@ const Chart = () => {
         <div className="p-6 rounded-xl shadow-xl bg-white flex flex-col">
           <div className="flex justify-between items-center mb-6">
             <div>
-              <h3 className="text-xl font-bold text-gray-800">
+              <h3 className="font-montserrat text-xl font-bold text-gray-800">
                 Career Timeline
               </h3>
               <p className="text-sm text-gray-500 font-montserrat">
                 Your professional growth over the years
               </p>
             </div>
-            <button className="flex items-center text-sm font-semibold text-pink-600 hover:text-pink-700 transition">
+            <button className="font-montserrat flex items-center text-sm font-semibold text-pink-600 hover:text-pink-700 transition">
               <Linkedin className="w-4 h-4 mr-1" /> Share on LinkedIn
             </button>
           </div>
@@ -131,14 +131,13 @@ const Chart = () => {
         </div>
 
         {/* Industry Distribution */}
-        {/* Industry Distribution */}
         <div className="p-6 rounded-xl shadow-xl bg-white flex flex-col items-center">
           {/* Header */}
           <div className="flex justify-between items-center w-full mb-2">
             <h3 className="text-xl font-bold text-black font-montserrat">
               Industry Distribution
             </h3>
-            <button className="flex items-center text-sm font-semibold text-pink-600 hover:text-pink-700 transition">
+            <button className="flex items-center text-sm font-semibold text-pink-600 hover:text-pink-700 transition font-montserrat">
               <Linkedin className="w-4 h-4 mr-1" /> Share on LinkedIn
             </button>
           </div>
@@ -188,7 +187,7 @@ const Chart = () => {
                   className="w-3 h-3 rounded-full"
                   style={{ backgroundColor: item.color }}
                 ></div>
-                <span>{item.name}</span>
+                <span className="font-montserrat">{item.name}</span>
               </div>
             ))}
           </div>
