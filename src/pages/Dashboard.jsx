@@ -2,6 +2,7 @@ import Chart from "../components/Chart";
 import DashboardCards from "../components/DashboardCards";
 import JobApplication from "../components/JobApplication";
 import PlatformActivity from "../components/PlatformActivity";
+import Heading from "../components/Heading";
 
 function Dashboard() {
   return (

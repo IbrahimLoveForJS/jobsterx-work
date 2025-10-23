@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Heading from "./Heading";
 
 export default function Header() {
   const [showModal, setShowModal] = useState(false);
@@ -19,22 +20,20 @@ export default function Header() {
   return (
     <>
       {/* ===== Header Section ===== */}
-      <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
-        <div className="flex flex-col text-center sm:text-left">
-          <h1 className="text-lg sm:text-xl font-bold font-montserrat text-gray-800">
-            Resume Builder
-          </h1>
-          <p className="text-xs sm:text-sm font-montserrat text-[#5B5B5B]">
-            Create ATS-optimized resumes that get you noticed
-          </p>
-        </div>
+      <header className="mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-gray-100 p-4 rounded-xl">
+          <Heading
+            heading="Resume JD Score Analyzer"
+            subtitle="Optimize your resume for ATS and job descriptions with AI-powered insights"
+          />
 
-        <button
-          onClick={() => setShowModal(true)}
-          className="bg-gradient-to-r from-[#3A0CA3] to-[#7209B7] hover:opacity-90 py-3 text-white px-4 sm:px-6 rounded-xl text-xs sm:text-sm font-semibold transition duration-200 w-full sm:w-auto font-montserrat"
-        >
-          Get Your Resume JD Score
-        </button>
+          <button
+            onClick={() => setShowModal(true)}
+            className="bg-gradient-to-r from-[#3A0CA3] to-[#7209B7] hover:opacity-90 py-3 text-white px-4 sm:px-6 rounded-xl text-xs sm:text-sm font-semibold transition duration-200 whitespace-nowrap font-montserrat"
+          >
+            Get Your Resume JD Score
+          </button>
+        </div>
       </header>
 
       {/* ===== Modal Section ===== */}

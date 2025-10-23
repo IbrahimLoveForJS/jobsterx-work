@@ -1,48 +1,48 @@
-import React from "react"
-import { CiLinkedin } from "react-icons/ci"
-import { useNavigate } from "react-router-dom"
+import React from "react";
+import { CiLinkedin } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
+import Heading from "./Heading";
+import { ImQrcode } from "react-icons/im";
 
 export default function DashboardCards() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className="font-montserrat bg-gray-50 mb-10">
       <div className="w-full">
         {/* ===== HEADER ===== */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-          <div>
-            <h1 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900">
-              Career Dashboard
-            </h1>
-            <p className="text-sm md:text-base text-gray-600 mt-1">
-              Track your professional journey and job application progress
-            </p>
-          </div>
+        <div className="bg-gray-100 mt-6 px-4 py-2 rounded-xl flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+          <Heading
+            heading="Career Dashboard"
+            subtitle="Track your professional journey and job application progress"
+          />
 
-          <div className="flex flex-wrap gap-3 mt-4 md:mt-0">
-            <button className="flex items-center gap-2 bg-gray-800 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md hover:bg-gray-900 transition">
-              QR CODE
+          <div className="flex gap-3 flex-nowrap overflow-x-auto md:overflow-visible">
+            <button className="flex items-center gap-2 text-sm font-2xl transition whitespace-nowrap">
+              <ImQrcode/>
             </button>
+
             <button
               onClick={() => navigate("/update-profile")}
-              className="flex items-center gap-2 bg-white border border-gray-200 text-gray-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm hover:bg-gray-50 transition"
+              className="flex items-center gap-2 bg-white border border-gray-200 text-gray-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm hover:bg-gray-50 transition whitespace-nowrap"
             >
-              Update Profile
+              
             </button>
-            <button className="flex items-center gap-2 bg-pink-500 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md hover:bg-pink-600 transition">
+
+            <button className="flex items-center gap-2 bg-pink-500 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md hover:bg-pink-600 transition whitespace-nowrap">
               Sign Out
             </button>
           </div>
         </div>
 
         {/* ===== TITLE ===== */}
-        <h2 className="text-base font-semibold text-gray-900 mb-4">
+        <h2 className="text-base font-semibold text-gray-900 mb-4 mt-6">
           Career Overview
         </h2>
 
         {/* ===== CARDS GRID ===== */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* ===== CARD 1: Total Experience ===== */}
+          {/* CARD 1 */}
           <div className="bg-[#3D0CA8] text-white p-4 rounded-2xl shadow-lg">
             <div className="flex justify-between items-center mb-4">
               <div className="flex items-center gap-2 min-w-0">
@@ -59,7 +59,9 @@ export default function DashboardCards() {
                 <h3 className="text-3xl font-extrabold leading-none">5</h3>
                 <span className="text-xs mt-0.5 inline-block">Years</span>
               </div>
-              <div className="text-xl font-bold text-white/70 self-center">•</div>
+              <div className="text-xl font-bold text-white/70 self-center">
+                •
+              </div>
               <div className="text-center">
                 <h3 className="text-3xl font-extrabold leading-none">8</h3>
                 <span className="text-xs mt-0.5 inline-block">Months</span>
@@ -71,7 +73,7 @@ export default function DashboardCards() {
             </div>
           </div>
 
-          {/* ===== CARD 2: JobsterX Level ===== */}
+          {/* CARD 2 */}
           <div className="bg-[#3D0CA8] text-white p-4 rounded-2xl shadow-lg">
             <div className="flex justify-between items-center mb-4">
               <div className="flex items-center gap-2 min-w-0">
@@ -96,7 +98,7 @@ export default function DashboardCards() {
             </div>
           </div>
 
-          {/* ===== CARD 3: Companies ===== */}
+          {/* CARD 3 */}
           <div className="bg-[#3D0CA8] text-white p-4 rounded-2xl shadow-lg">
             <div className="flex items-center gap-2 mb-4">
               <span className="text-base">🏢</span>
@@ -107,14 +109,14 @@ export default function DashboardCards() {
               <p className="text-xs text-white/80 mb-3">Organizations</p>
               <div className="border-t border-white/20 pt-2">
                 <p className="text-xs">
-                  <span className="font-semibold text-base">2.0</span> avg. tenure
-                  (years)
+                  <span className="font-semibold text-base">2.0</span> avg.
+                  tenure (years)
                 </p>
               </div>
             </div>
           </div>
 
-          {/* ===== CARD 4: Industries ===== */}
+          {/* CARD 4 */}
           <div className="bg-[#3D0CA8] text-white p-4 rounded-2xl shadow-lg">
             <div className="flex items-center gap-2 mb-4">
               <span className="text-base">🏭</span>
@@ -138,5 +140,5 @@ export default function DashboardCards() {
         </div>
       </div>
     </div>
-  )
+  );
 }

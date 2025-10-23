@@ -79,28 +79,33 @@ const App = () => {
                 </p>
               </div>
 
-              {/* Status Toggle */}
-              <div className="flex items-center space-x-3">
-                <span className="text-sm font-semibold uppercase tracking-wider">
-                  STATUS
-                </span>
-                <span className="font-bold text-lg">
-                  {isActive ? "Active" : "Inactive"}
-                </span>
-                <button
-                  onClick={() => setIsActive(!isActive)}
-                  className={`w-12 h-6 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
-                    isActive ? "bg-white" : "bg-indigo-300"
-                  }`}
-                  aria-checked={isActive}
-                  role="switch"
-                >
+              {/* Status Toggle - MODIFIED for Image Alignment */}
+              <div className="flex flex-col items-center">
+                <div className="text-sm font-normal uppercase tracking-wider mb-1 mr-16 font-montserrat ">
+                  Status
+                </div>
+                {/* Horizontal row for Status Text and Toggle, centered vertically */}
+                <div className="flex items-center space-x-2">
                   <div
-                    className={`bg-purple-600 w-4 h-4 rounded-full shadow-md transform transition-transform duration-300 ${
-                      isActive ? "translate-x-6" : "translate-x-0"
+                    className={`font-extrabold text-2xl text-white`} // Increased size and ensured white text
+                  >
+                    {isActive ? "Active" : "Inactive"}
+                  </div>
+                  <button
+                    onClick={() => setIsActive(!isActive)}
+                    className={`w-12 h-6 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+                      isActive ? "bg-white" : "bg-indigo-300"
                     }`}
-                  />
-                </button>
+                    aria-checked={isActive}
+                    role="switch"
+                  >
+                    <div
+                      className={`bg-purple-600 w-4 h-4 rounded-full shadow-md transform transition-transform duration-300 ${
+                        isActive ? "translate-x-6" : "translate-x-0"
+                      }`}
+                    />
+                  </button>
+                </div>
               </div>
             </div>
           </header>

@@ -22,7 +22,7 @@ const Sidebar = ({ onClose, isMobile }) => {
     <div className="w-72 sticky top-0 h-screen bg-white border-r shadow-xl flex flex-col overflow-y-auto">
       {/* ===== Top Logo & Close ===== */}
       <div className="flex justify-between items-center px-4 py-3 border-b bg-[#3A0CA3]">
-        <img src="/logo.png" alt="Logo" className="h-6 text-white " />
+        <img src="/JobsterX-White.png" alt="Logo" className="h-6 text-white " />
         {isMobile && (
           <IoMdClose className="text-2xl cursor-pointer" onClick={onClose} />
         )}
